@@ -29,16 +29,14 @@ export default function Footer({ prefix = "" }: FooterProps) {
 
           <div style={{ display: "flex", gap: 64, flexWrap: "wrap" }}>
             <FooterCol title="Index" links={[
-              { label: "Work",    href: `${prefix}#work` },
+              { label: "Work",    href: `${prefix}#case-studies` },
               { label: "Systems", href: `${prefix}#systems` },
               { label: "Process", href: `${prefix}#process` },
               { label: "Contact", href: `${prefix}#contact` },
             ]} />
             <FooterCol title="Elsewhere" links={[
-              { label: "GitHub",   href: "https://github.com/billalaashraf",          external: true },
-              { label: "LinkedIn", href: "https://www.linkedin.com/in/bashraf",       external: true },
-              { label: "X / Twitter", href: "#" },
-              { label: "Read.cv",  href: "#" },
+              { label: "GitHub",   href: "https://github.com/billalaashraf",    external: true },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/bashraf", external: true },
             ]} />
             <FooterCol title="Contact" links={[
               { label: "bilalasharf@gmail.com", href: "mailto:bilalasharf@gmail.com" },
@@ -54,9 +52,6 @@ export default function Footer({ prefix = "" }: FooterProps) {
         }}>
           <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.04em", color: "var(--fg-4)", textTransform: "uppercase" }}>
             © 2026 Bilal Ashraf · All rights reserved
-          </span>
-          <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.04em", color: "var(--fg-4)", textTransform: "uppercase" }}>
-            v 2.6 · Hand-built
           </span>
         </div>
       </div>

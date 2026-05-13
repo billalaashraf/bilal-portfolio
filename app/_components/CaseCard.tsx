@@ -82,7 +82,7 @@ export default function CaseCard({ num, href, title, tail, summary, tags, meta, 
           style={{ display: "inline-flex", alignItems: "center", gap: 10 }}
           className="case-view"
         >
-          View case study <span className="arr case-arr" style={{ transition: "transform .2s ease" }}>→</span>
+          View case study
         </a>
         <span style={{ color: "var(--fg-4)", fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.04em", textTransform: "uppercase", whiteSpace: "nowrap" }}>
           {meta}
@@ -90,7 +90,6 @@ export default function CaseCard({ num, href, title, tail, summary, tags, meta, 
       </div>
 
       <style>{`
-        .case-card:hover .case-arr { transform: translateX(3px); color: var(--fg); }
         @media (max-width: 900px) { .case-card[style*="span 2"] { grid-column: span 1 !important; } }
       `}</style>
     </motion.article>

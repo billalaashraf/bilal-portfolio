@@ -57,20 +57,19 @@ const cases = [
 export default function CaseStudies() {
   return (
     <section
-      id="work"
+      id="case-studies"
       style={{ padding: "96px 0", borderBottom: "1px solid var(--line)" }}
     >
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <span className="eyebrow"><span className="dot"/>Selected work · 2023–2026</span>
             <h2>Production systems I&apos;ve architected, shipped, and operated.</h2>
           </div>
           <div className="meta">
             <span style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.02em", textTransform: "uppercase", color: "var(--fg-3)" }}>
               05 case studies
             </span>
-            <a href="#work" className="btn ghost sm">All projects <span className="arr">→</span></a>
+            <a href="/case-studies" className="btn ghost sm">All projects <span className="arr">→</span></a>
           </div>
         </div>
 

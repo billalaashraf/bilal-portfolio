@@ -75,7 +75,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div {...item(0.18)} style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 64 }}>
-          <a href="#work" className="btn primary">
+          <a href="#case-studies" className="btn primary">
             View case studies <span className="arr">→</span>
           </a>
           <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn">
