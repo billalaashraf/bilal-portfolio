@@ -360,11 +360,11 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 14px; border: 1px solid var(--line-2); border-radius: 7px;
   background: #101014; white-space: nowrap;
 }
-/* Elevated node (API, Database) — white text, warm graphite border, slight surface lift */
+/* Elevated node (API, Database) — accent text, matching border tint */
 .opsys .anode.acc {
-  color: var(--fg);
-  border-color: #2E2B27;
-  background: #171512;
+  color: var(--accent);
+  border-color: rgba(217,164,99,0.35);
+  background: rgba(217,164,99,0.04);
 }
 .opsys .aline {
   flex: 1; height: 1px; background: var(--line-2); position: relative; min-width: 10px;
