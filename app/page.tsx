@@ -14,8 +14,8 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <TechStrip />
         <OperationalSurface />
+        <TechStrip />
         <CaseStudies />
         <Systems />
         <Process />
