@@ -43,7 +43,6 @@ export default function Nav({ prefix = "" }: NavProps) {
         {/* Center links */}
         <div className="nav-links-desktop">
           <a href={`${prefix}#case-studies`} className="nav-link">Work</a>
-          <a href="/case-studies" className="nav-link">Case studies</a>
           <a href={`${prefix}#systems`} className="nav-link">Systems</a>
           <a href={`${prefix}#process`} className="nav-link">Process</a>
           <a href={`${prefix}#contact`} className="nav-link">Contact</a>

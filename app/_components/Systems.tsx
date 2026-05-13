@@ -10,12 +10,12 @@ const domains = [
 ];
 
 const nodes = [
-  { label: "API", accent: true },
-  { label: "Queue Workers", accent: false },
-  { label: "Retry Logic", accent: false },
-  { label: "Webhooks", accent: false },
-  { label: "Database", accent: true },
-  { label: "Third-party", accent: false },
+  { label: "API",           acc: true  },
+  { label: "Queue Workers", acc: false },
+  { label: "Retry Logic",   acc: false },
+  { label: "Webhooks",      acc: false },
+  { label: "Database",      acc: true  },
+  { label: "Third-party",   acc: false },
 ];
 
 export default function Systems() {
@@ -36,7 +36,7 @@ export default function Systems() {
         </div>
 
         <div className="opsys">
-          {/* Animated architecture diagram */}
+          {/* Architecture topology */}
           <div
             className="arch"
             role="img"
@@ -48,7 +48,7 @@ export default function Systems() {
             <div className="arch-row">
               {nodes.map((node, i) => (
                 <>
-                  <span key={node.label} className={`anode${node.accent ? " acc" : ""}`}>
+                  <span key={node.label} className={`anode${node.acc ? " acc" : ""}`}>
                     {node.label}
                   </span>
                   {i < nodes.length - 1 && (
