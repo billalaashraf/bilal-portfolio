@@ -1,10 +1,15 @@
-export default function Footer() {
+interface FooterProps {
+  /** Prepended to anchor hrefs — pass "/" when rendering on a sub-page */
+  prefix?: string;
+}
+
+export default function Footer({ prefix = "" }: FooterProps) {
   return (
     <footer style={{ borderTop: "1px solid var(--line)", padding: "48px 0 56px", color: "var(--fg-3)", fontSize: 13.5 }}>
       <div className="wrap">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 32, flexWrap: "wrap" }}>
           <div>
-            <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 600, letterSpacing: "-0.01em", color: "var(--fg)" }}>
+            <a href={prefix || "/"} style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 600, letterSpacing: "-0.01em", color: "var(--fg)" }}>
               <span
                 aria-hidden="true"
                 style={{
@@ -22,16 +27,16 @@ export default function Footer() {
 
           <div style={{ display: "flex", gap: 64, flexWrap: "wrap" }}>
             <FooterCol title="Index" links={[
-              { label: "Work", href: "#work" },
-              { label: "Systems", href: "#systems" },
-              { label: "Process", href: "#process" },
-              { label: "Contact", href: "#contact" },
+              { label: "Work",    href: `${prefix}#work` },
+              { label: "Systems", href: `${prefix}#systems` },
+              { label: "Process", href: `${prefix}#process` },
+              { label: "Contact", href: `${prefix}#contact` },
             ]} />
             <FooterCol title="Elsewhere" links={[
-              { label: "GitHub", href: "#" },
-              { label: "LinkedIn", href: "#" },
-              { label: "X / Twitter", href: "#" },
-              { label: "Read.cv", href: "#" },
+              { label: "GitHub",     href: "#" },
+              { label: "LinkedIn",   href: "#" },
+              { label: "X / Twitter",href: "#" },
+              { label: "Read.cv",    href: "#" },
             ]} />
             <FooterCol title="Contact" links={[
               { label: "hello@bilalashraf.dev", href: "mailto:hello@bilalashraf.dev" },

@@ -74,9 +74,9 @@ export default function Hero() {
             marginBottom: 40,
           }}
         >
-          I design and develop production-ready software systems — from internal
-          dashboards and AI workflows to ecommerce infrastructure, backend
-          architecture, and third-party integrations.
+          I design and develop production-ready software systems. Internal dashboards,
+          AI workflows, ecommerce infrastructure, backend architecture, and
+          third-party integrations.
         </motion.p>
 
         <motion.div {...item(0.18)} style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 64 }}>

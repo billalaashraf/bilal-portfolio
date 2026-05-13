@@ -5,15 +5,15 @@ const steps = [
   },
   {
     n: "02", key: "ARCHITECT", title: "Architect",
-    desc: "Data model, service boundaries, integration map. Trade-offs written down — not implied.",
+    desc: "Data model, service boundaries, integration map. Trade-offs written down, not assumed.",
   },
   {
     n: "03", key: "BUILD", title: "Build",
-    desc: "Two-week loops with shipped previews. I'm in the codebase from day one — no handoff layer.",
+    desc: "Two-week loops with shipped previews. I'm in the codebase from day one. No handoff layer.",
   },
   {
     n: "04", key: "INTEGRATE", title: "Integrate",
-    desc: "Payments, CRMs, Shopify, internal services — wired with retries, idempotency, and observability.",
+    desc: "Payments, CRMs, Shopify, internal services. All wired with retries, idempotency, and observability.",
   },
   {
     n: "05", key: "LAUNCH", title: "Launch",
@@ -38,7 +38,7 @@ export default function Process() {
             <h2>From the first call to live in production.</h2>
           </div>
           <p className="subnote">
-            Short loops, clear artifacts at each step. You work with me directly — no account managers, no proxies, no handoff layer.
+            Short loops, clear artifacts at each step. You work with me directly. No account managers, no proxies, no handoff layer.
           </p>
         </div>
 

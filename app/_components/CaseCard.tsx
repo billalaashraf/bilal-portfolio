@@ -6,6 +6,7 @@ import CaseDiagram, { DiagramVariant } from "./diagram/CaseDiagram";
 
 interface CaseCardProps {
   num: string;
+  href: string;
   title: string;
   tail: string;
   summary: string;
@@ -18,7 +19,7 @@ interface CaseCardProps {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export default function CaseCard({ num, title, tail, summary, tags, meta, variant, wide, index }: CaseCardProps) {
+export default function CaseCard({ num, href, title, tail, summary, tags, meta, variant, wide, index }: CaseCardProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const reduced = useReducedMotion();
@@ -62,7 +63,7 @@ export default function CaseCard({ num, title, tail, summary, tags, meta, varian
         </span>
         <h3 style={{ margin: 0, fontSize: 22, letterSpacing: "-0.02em", fontWeight: 500, lineHeight: 1.2 }}>
           {title}{" "}
-          <span style={{ color: "var(--fg-3)", fontWeight: 400 }}>— {tail}</span>
+          <span style={{ color: "var(--fg-3)", fontWeight: 400 }}>, {tail}</span>
         </h3>
         <p style={{ margin: 0, color: "var(--fg-2)", fontSize: 14.5, lineHeight: 1.55 }}>{summary}</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 2 }}>
@@ -77,7 +78,7 @@ export default function CaseCard({ num, title, tail, summary, tags, meta, varian
         color: "var(--fg-2)", fontSize: 13.5,
       }}>
         <a
-          href="#"
+          href={href}
           style={{ display: "inline-flex", alignItems: "center", gap: 10 }}
           className="case-view"
         >

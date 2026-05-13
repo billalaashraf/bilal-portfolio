@@ -45,7 +45,7 @@ export default function CTA() {
             Have a system that needs to be built, fixed, or automated?
           </h2>
           <p className="subnote" style={{ marginTop: 18 }}>
-            Send a few sentences about what you&apos;re working on. You&apos;ll hear back from me directly — not a sales rep — within one business day.
+            Send a few sentences about what you&apos;re working on. I&apos;ll respond personally within one business day.
           </p>
         </div>
 

@@ -3,6 +3,7 @@ import CaseCard from "./CaseCard";
 const cases = [
   {
     num: "01",
+    href: "/case-studies/dotshop-ai",
     title: "DotShop.ai",
     tail: "Multi-Region Ecommerce Platform",
     summary: "Architected and developed a curated fashion, beauty, and jewelry ecommerce platform with Next.js frontend, REST backend, relational database, AWS infrastructure, fintech payment APIs, and real-time Shopify sync.",
@@ -12,6 +13,7 @@ const cases = [
   },
   {
     num: "02",
+    href: "/case-studies/clinic-dashboard",
     title: "Clinic Dashboard",
     tail: "Automation & Patient Follow-Up",
     summary: "Built a live clinic operations dashboard with Google Sheets sync, n8n automations, reminder tracking, action queue, revenue-at-risk metrics, and patient workflow management.",
@@ -21,6 +23,7 @@ const cases = [
   },
   {
     num: "03",
+    href: "/case-studies/web-shop-manager",
     title: "Web Shop Manager",
     tail: "Backend & Cloud Optimization",
     summary: "Optimized backend infrastructure, reduced AWS/RDS overhead, and modernized legacy PHP architecture toward a scalable Go + TypeScript-based backend system.",
@@ -30,6 +33,7 @@ const cases = [
   },
   {
     num: "04",
+    href: "/case-studies/scrively",
     title: "Scrively",
     tail: "AI Workflow Rendering Engine",
     summary: "Developed core rendering engine architecture for dynamic AI-driven workflows, structured interactions, state transitions, and adaptive user experiences.",
@@ -39,6 +43,7 @@ const cases = [
   },
   {
     num: "05",
+    href: "/case-studies/monkeytilt",
     title: "MonkeyTilt",
     tail: "Gaming Platform Performance Optimization",
     summary: "Optimized database queries, improved gaming and business logic layers, and automated infrastructure deployment workflows for a real-time gaming platform.",

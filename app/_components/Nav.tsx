@@ -1,4 +1,9 @@
-export default function Nav() {
+interface NavProps {
+  /** Prepended to anchor hrefs — pass "/" when rendering on a sub-page */
+  prefix?: string;
+}
+
+export default function Nav({ prefix = "" }: NavProps) {
   return (
     <nav
       style={{
@@ -12,7 +17,7 @@ export default function Nav() {
       }}
     >
       <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
-        <a href="#" className="nav-brand">
+        <a href={prefix || "/"} className="nav-brand">
           <span
             aria-hidden="true"
             style={{
@@ -25,10 +30,10 @@ export default function Nav() {
         </a>
 
         <div className="nav-links-desktop">
-          <a href="#work" className="nav-link">Work</a>
-          <a href="#systems" className="nav-link">Systems</a>
-          <a href="#process" className="nav-link">Process</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href={`${prefix}#work`} className="nav-link">Work</a>
+          <a href={`${prefix}#systems`} className="nav-link">Systems</a>
+          <a href={`${prefix}#process`} className="nav-link">Process</a>
+          <a href={`${prefix}#contact`} className="nav-link">Contact</a>
         </div>
 
         <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn sm">

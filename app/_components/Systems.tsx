@@ -2,7 +2,7 @@ const systems = [
   {
     ix: "— 01",
     title: "AI Agents & Workflow Automation",
-    desc: "Production-grade agents, retrieval pipelines, and orchestration that move work — not just demos.",
+    desc: "Production-grade agents, retrieval pipelines, and orchestration that actually move work. Not just demos.",
     bullets: ["n8n · Temporal", "OpenAI · Anthropic", "RAG · tool use"],
   },
   {
@@ -26,7 +26,7 @@ const systems = [
   {
     ix: "— 05",
     title: "Third-Party Integrations",
-    desc: "CRM, payments, Shopify, accounting, identity, and the long tail of vendor APIs — wired up reliably.",
+    desc: "CRM, payments, Shopify, accounting, identity, and the long tail of vendor APIs. All wired up reliably.",
     bullets: ["Stripe · Shopify", "HubSpot · Salesforce", "Webhooks · retries"],
   },
   {
@@ -50,7 +50,7 @@ export default function Systems() {
             <h2>Systems I build.</h2>
           </div>
           <p className="subnote">
-            Six things I build for product teams and operators. End-to-end — architecture, implementation, integration, and operating them in production.
+            Six things I build for product teams and operators. Architecture, implementation, integration, and production operation. End to end.
           </p>
         </div>
 
