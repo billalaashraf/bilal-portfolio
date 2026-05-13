@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const cases = [
   {
     num: "01",
-    href: "/case-studies/dotshop-ai",
+    href: "/case-studies/dotshop",
     title: "DotShop.ai",
     tail: "Multi-Region Ecommerce Platform",
     summary:

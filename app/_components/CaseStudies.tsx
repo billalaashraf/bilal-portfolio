@@ -3,7 +3,7 @@ import CaseCard from "./CaseCard";
 const cases = [
   {
     num: "01",
-    href: "/case-studies/dotshop-ai",
+    href: "/case-studies/dotshop",
     title: "DotShop.ai",
     tail: "Multi-Region Ecommerce Platform",
     summary: "Architected and developed a curated fashion, beauty, and jewelry ecommerce platform with Next.js frontend, REST backend, relational database, AWS infrastructure, fintech payment APIs, and real-time Shopify sync.",
