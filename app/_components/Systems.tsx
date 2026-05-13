@@ -1,40 +1,21 @@
-const systems = [
-  {
-    ix: "— 01",
-    title: "AI Agents & Workflow Automation",
-    desc: "Production-grade agents, retrieval pipelines, and orchestration that actually move work. Not just demos.",
-    bullets: ["n8n · Temporal", "OpenAI · Anthropic", "RAG · tool use"],
-  },
-  {
-    ix: "— 02",
-    title: "Internal Dashboards & Admin Tools",
-    desc: "Operations UIs with real-time data, role-based access, and audit trails your team will actually use daily.",
-    bullets: ["Next.js · Retool", "Postgres · ClickHouse", "Auth · SSO · RBAC"],
-  },
-  {
-    ix: "— 03",
-    title: "Ecommerce & Marketplace Systems",
-    desc: "Storefronts, checkout, multi-region payments, inventory and order workflows that hold up under real load.",
-    bullets: ["Shopify · Medusa", "Stripe · Adyen", "Order ops · sync"],
-  },
-  {
-    ix: "— 04",
-    title: "Backend APIs & Cloud Infrastructure",
-    desc: "Typed APIs, event pipelines, and AWS infrastructure tuned for predictable cost, latency, and on-call sanity.",
-    bullets: ["Go · TypeScript", "AWS · Terraform", "RDS · Redis · SQS"],
-  },
-  {
-    ix: "— 05",
-    title: "Third-Party Integrations",
-    desc: "CRM, payments, Shopify, accounting, identity, and the long tail of vendor APIs. All wired up reliably.",
-    bullets: ["Stripe · Shopify", "HubSpot · Salesforce", "Webhooks · retries"],
-  },
-  {
-    ix: "— 06",
-    title: "Data Sync, Reporting & Ops Tools",
-    desc: "ETL, sheets and warehouse syncs, ops dashboards, and the small internal tools that compound team leverage.",
-    bullets: ["Airbyte · dbt", "BigQuery · Postgres", "Sheets · Metabase"],
-  },
+const domains = [
+  { ix: "01", label: "Workflow Automation" },
+  { ix: "02", label: "Queue Processing" },
+  { ix: "03", label: "Inventory Sync" },
+  { ix: "04", label: "Real-time Operations" },
+  { ix: "05", label: "Payments" },
+  { ix: "06", label: "Infrastructure" },
+  { ix: "07", label: "Retry-safe Systems" },
+  { ix: "08", label: "Operational Dashboards" },
+];
+
+const nodes = [
+  { label: "API", accent: true },
+  { label: "Queue Workers", accent: false },
+  { label: "Retry Logic", accent: false },
+  { label: "Webhooks", accent: false },
+  { label: "Database", accent: true },
+  { label: "Third-party", accent: false },
 ];
 
 export default function Systems() {
@@ -46,25 +27,59 @@ export default function Systems() {
       <div className="wrap">
         <div className="sec-head">
           <div>
-            <span className="eyebrow"><span className="dot"/>Capabilities</span>
-            <h2>Systems I build.</h2>
+            <span className="eyebrow"><span className="dot" />Operational systems</span>
+            <h2>The shape of the systems I run.</h2>
           </div>
           <p className="subnote">
-            Six things I build for product teams and operators. Architecture, implementation, integration, and production operation. End to end.
+            Systems designed for operational reliability, visibility, and long-term maintainability.
           </p>
         </div>
 
-        <div className="systems">
-          {systems.map((s) => (
-            <div key={s.ix} className="sys">
-              <span className="ix">{s.ix}</span>
-              <h4>{s.title}</h4>
-              <p>{s.desc}</p>
-              <div className="bullets">
-                {s.bullets.map((b) => <span key={b}>{b}</span>)}
-              </div>
+        <div className="opsys">
+          {/* Animated architecture diagram */}
+          <div
+            className="arch"
+            role="img"
+            aria-label="Reference topology: API to queue workers, retry logic, webhooks, database, and third-party services, with an observability spine"
+          >
+            <span className="topcap">Reference topology</span>
+            <span className="topcap-r">production</span>
+
+            <div className="arch-row">
+              {nodes.map((node, i) => (
+                <>
+                  <span key={node.label} className={`anode${node.accent ? " acc" : ""}`}>
+                    {node.label}
+                  </span>
+                  {i < nodes.length - 1 && (
+                    <span key={`line-${i}`} className="aline">
+                      <span className="pkt" style={{ animationDelay: `${i * 0.8}s` }} />
+                    </span>
+                  )}
+                </>
+              ))}
             </div>
-          ))}
+
+            <div className="arch-spine">
+              <span className="lbl">Observability</span>
+              <span className="ticks">
+                {Array.from({ length: 13 }, (_, i) => (
+                  <i key={i} className={i % 2 === 0 ? "on" : ""} />
+                ))}
+              </span>
+              <span className="pr">traces · metrics · logs</span>
+            </div>
+          </div>
+
+          {/* Domains strip */}
+          <div className="doms">
+            {domains.map((d) => (
+              <div key={d.ix} className="dom">
+                <span className="ix">{d.ix}</span>
+                {d.label}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -327,9 +327,160 @@ a { color: inherit; text-decoration: none; }
 .footer-link { transition: color .15s ease; }
 .footer-link:hover { color: var(--fg); }
 
+/* ── Operational systems (arch diagram + domains) ───────── */
+.opsys { display: flex; flex-direction: column; gap: 24px; }
+
+.opsys .arch {
+  border: 1px solid var(--line); border-radius: 12px;
+  background: #0B0B0E;
+  padding: 42px 36px 30px;
+  position: relative; overflow: hidden;
+}
+.opsys .arch .topcap {
+  position: absolute; top: 14px; left: 18px;
+  font-family: var(--mono); font-size: 9.5px; color: var(--fg-4); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.opsys .arch .topcap-r {
+  position: absolute; top: 14px; right: 18px;
+  font-family: var(--mono); font-size: 9.5px; color: var(--fg-4); letter-spacing: 0.1em;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.opsys .arch .topcap-r::before {
+  content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--good);
+  box-shadow: 0 0 0 3px rgba(126,217,159,0.15);
+}
+.opsys .arch-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 6px;
+  position: relative; z-index: 1;
+}
+.opsys .anode {
+  flex: 0 0 auto;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em;
+  color: var(--fg); text-transform: uppercase;
+  padding: 10px 14px; border: 1px solid var(--line-2); border-radius: 7px;
+  background: #101014; white-space: nowrap;
+}
+.opsys .anode.acc { color: var(--accent); border-color: rgba(217,164,99,0.42); background: rgba(217,164,99,0.04); }
+.opsys .aline { flex: 1; height: 1px; background: var(--line-2); position: relative; min-width: 10px; }
+.opsys .aline .pkt {
+  position: absolute; top: 50%; left: 0; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--accent); transform: translateY(-50%);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+  animation: opsysFlow 6s linear infinite;
+}
+.opsys .arch-spine {
+  margin-top: 22px; display: flex; align-items: center; gap: 14px;
+  border-top: 1px dashed var(--line); padding-top: 14px;
+}
+.opsys .arch-spine .lbl { font-family: var(--mono); font-size: 9.5px; color: var(--fg-4); letter-spacing: 0.14em; text-transform: uppercase; }
+.opsys .arch-spine .ticks { flex: 1; display: flex; gap: 6px; align-items: center; }
+.opsys .arch-spine .ticks i { flex: 1; height: 1px; background: var(--line); display: block; }
+.opsys .arch-spine .ticks i.on { background: var(--fg-3); }
+.opsys .arch-spine .pr { font-family: var(--mono); font-size: 9.5px; color: var(--fg-3); letter-spacing: 0.06em; }
+
+@media (max-width: 900px) {
+  .opsys .arch { padding: 42px 22px 24px; }
+  .opsys .arch-row { flex-direction: column; align-items: stretch; gap: 6px; }
+  .opsys .anode { text-align: center; padding: 10px 12px; }
+  .opsys .aline { width: 1px; height: 14px; align-self: center; min-width: 0; }
+  .opsys .aline .pkt { display: none; }
+  .opsys .arch-spine { flex-direction: row; flex-wrap: wrap; }
+  .opsys .arch-spine .ticks { order: 3; flex-basis: 100%; margin-top: 6px; }
+}
+
+.opsys .doms {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #0B0B0E;
+}
+.opsys .doms .dom {
+  padding: 18px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: 12px; transition: background .2s ease;
+  font-size: 14px; color: var(--fg); letter-spacing: -0.005em;
+}
+.opsys .doms .dom:hover { background: #101014; }
+.opsys .doms .dom .ix { font-family: var(--mono); font-size: 9.5px; color: var(--fg-4); letter-spacing: 0.1em; flex: 0 0 auto; width: 18px; }
+.opsys .doms .dom:nth-child(4n) { border-right: 0; }
+.opsys .doms .dom:nth-last-child(-n+4) { border-bottom: 0; }
+@media (max-width: 900px) {
+  .opsys .doms { grid-template-columns: repeat(2, 1fr); }
+  .opsys .doms .dom { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .opsys .doms .dom:nth-child(4n) { border-right: 1px solid var(--line); }
+  .opsys .doms .dom:nth-child(2n) { border-right: 0; }
+  .opsys .doms .dom:nth-last-child(-n+4) { border-bottom: 1px solid var(--line); }
+  .opsys .doms .dom:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (max-width: 520px) {
+  .opsys .doms { grid-template-columns: 1fr; }
+  .opsys .doms .dom { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; }
+  .opsys .doms .dom:last-child { border-bottom: 0 !important; }
+}
+
+/* ── Operational metrics snapshot ───────────────────────── */
+.ops-snap { border: 1px solid var(--line); border-radius: 14px; background: var(--bg-card); overflow: hidden; }
+.ops-snap .ohead {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; border-bottom: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11px; color: var(--fg-3); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.ops-snap .ohead .ttl { color: var(--fg-2); text-transform: none; letter-spacing: 0.01em; font-size: 11.5px; }
+.ops-snap .ohead .spc { flex: 1; }
+.ops-snap .ohead .live { display: inline-flex; align-items: center; gap: 6px; color: #8BC9A4; }
+.ops-snap .ohead .live::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--good); box-shadow: 0 0 0 3px rgba(126,217,159,0.15);
+  animation: opsLive 2.4s ease-in-out infinite;
+}
+.ops-snap .ohead .rng { display: inline-flex; border: 1px solid var(--line-2); border-radius: 6px; padding: 2px; background: #101013; }
+.ops-snap .ohead .rng span { font-size: 10px; padding: 3px 8px; color: var(--fg-3); letter-spacing: 0.04em; border-radius: 4px; }
+.ops-snap .ohead .rng span.on { background: #1A1A1F; color: var(--fg); }
+
+.ops-snap-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.ops-snap-tile {
+  padding: 20px 22px 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 10px; min-height: 148px;
+}
+.ops-snap-tile:nth-child(3n) { border-right: 0; }
+.ops-snap-tile:nth-last-child(-n+3) { border-bottom: 0; }
+@media (max-width: 900px) {
+  .ops-snap-grid { grid-template-columns: repeat(2, 1fr); }
+  .ops-snap-tile { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .ops-snap-tile:nth-child(3n) { border-right: 1px solid var(--line); }
+  .ops-snap-tile:nth-child(2n) { border-right: 0; }
+}
+@media (max-width: 540px) {
+  .ops-snap-grid { grid-template-columns: 1fr; }
+  .ops-snap-tile { border-right: 0 !important; }
+}
+.ops-snap-tile .lbl {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  font-family: var(--mono); font-size: 10px; color: var(--fg-4); letter-spacing: 0.12em; text-transform: uppercase;
+}
+.ops-snap-tile .lbl .trend { font-family: var(--mono); font-size: 9.5px; color: var(--good); letter-spacing: 0.04em; }
+.ops-snap-tile .lbl .trend.flat { color: var(--fg-3); }
+.ops-snap-tile .v { font-size: 28px; font-weight: 500; letter-spacing: -0.022em; line-height: 1; color: var(--fg); }
+.ops-snap-tile .v .u { font-size: 13px; color: var(--fg-3); font-weight: 400; margin-left: 3px; }
+.ops-snap-tile .v.acc { color: var(--accent); }
+.ops-snap-tile .ctx { font-size: 11px; color: var(--fg-3); line-height: 1.4; margin-top: auto; font-family: var(--mono); letter-spacing: 0.02em; }
+.ops-snap-tile .bar { height: 4px; border-radius: 2px; background: #1A1A1F; overflow: hidden; }
+.ops-snap-tile .bar i { display: block; height: 100%; background: var(--accent); }
+.ops-snap-tile .bar.good i { background: var(--good); }
+.ops-snap .ofoot {
+  padding: 12px 18px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  font-family: var(--mono); font-size: 10.5px; color: var(--fg-4); letter-spacing: 0.04em;
+}
+.ops-snap .ofoot .note { color: var(--fg-3); max-width: 540px; text-wrap: pretty; letter-spacing: 0.02em; }
+
 /* ── Keyframes ──────────────────────────────────────────── */
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes opsysFlow { 0%{left:0;opacity:0} 8%{opacity:1} 92%{opacity:1} 100%{left:100%;opacity:0} }
+@keyframes opsLive { 0%,100%{opacity:1} 50%{opacity:0.55} }
+
+@media (prefers-reduced-motion: reduce) {
+  .opsys .aline .pkt { animation: none; opacity: 0; }
+  .ops-snap .ohead .live::before { animation: none; }
+}
 
 /* ── Reduced motion ─────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
