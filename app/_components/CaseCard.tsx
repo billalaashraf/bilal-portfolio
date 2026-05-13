@@ -9,7 +9,7 @@ interface CaseCardProps {
   title: string;
   tail: string;
   summary: string;
-  tags: string[];
+  tags: readonly string[];
   meta: string;
   variant: DiagramVariant;
   wide?: boolean;
