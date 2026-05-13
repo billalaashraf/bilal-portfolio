@@ -1,5 +1,5 @@
 interface FooterProps {
-  /** Prepended to anchor hrefs — pass "/" when rendering on a sub-page */
+  /** Prepended to anchor hrefs. Pass "/" when rendering on a sub-page. */
   prefix?: string;
 }
 
@@ -8,19 +8,21 @@ export default function Footer({ prefix = "" }: FooterProps) {
     <footer style={{ borderTop: "1px solid var(--line)", padding: "48px 0 56px", color: "var(--fg-3)", fontSize: 13.5 }}>
       <div className="wrap">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 32, flexWrap: "wrap" }}>
+
+          {/* Brand — text only, no mark */}
           <div>
-            <a href={prefix || "/"} style={{ display: "flex", alignItems: "center", gap: 10, fontWeight: 600, letterSpacing: "-0.01em", color: "var(--fg)" }}>
-              <span
-                aria-hidden="true"
-                style={{
-                  width: 22, height: 22, borderRadius: 6,
-                  background: "linear-gradient(135deg, var(--fg) 0 50%, transparent 50% 100%), var(--accent)",
-                  display: "block", flexShrink: 0,
-                }}
-              />
-              Bilal Ashraf
+            <a
+              href={prefix || "/"}
+              style={{ display: "flex", flexDirection: "column", gap: 4, textDecoration: "none" }}
+            >
+              <span style={{ fontWeight: 600, fontSize: 15, letterSpacing: "-0.01em", color: "var(--fg)", lineHeight: 1 }}>
+                Bilal Ashraf
+              </span>
+              <span style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.06em", color: "var(--fg-4)", textTransform: "uppercase", lineHeight: 1 }}>
+                AI Systems Engineer
+              </span>
             </a>
-            <p className="subnote" style={{ marginTop: 14, maxWidth: 360 }}>
+            <p className="subnote" style={{ marginTop: 16, maxWidth: 360 }}>
               Senior full-stack engineer building AI-powered systems, automation, internal tooling, and the backend infrastructure underneath them.
             </p>
           </div>
@@ -33,13 +35,13 @@ export default function Footer({ prefix = "" }: FooterProps) {
               { label: "Contact", href: `${prefix}#contact` },
             ]} />
             <FooterCol title="Elsewhere" links={[
-              { label: "GitHub",     href: "#" },
-              { label: "LinkedIn",   href: "#" },
-              { label: "X / Twitter",href: "#" },
-              { label: "Read.cv",    href: "#" },
+              { label: "GitHub",   href: "https://github.com/billalaashraf",          external: true },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/bashraf",       external: true },
+              { label: "X / Twitter", href: "#" },
+              { label: "Read.cv",  href: "#" },
             ]} />
             <FooterCol title="Contact" links={[
-              { label: "hello@bilalashraf.dev", href: "mailto:hello@bilalashraf.dev" },
+              { label: "bilalasharf@gmail.com", href: "mailto:bilalasharf@gmail.com" },
               { label: "Book a call", href: "https://calendly.com/billalaashraf/1-1-with-bilal", external: true },
             ]} />
           </div>

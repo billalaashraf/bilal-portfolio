@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case studies — Bilal Ashraf",
+  title: "Case studies · Bilal Ashraf",
   description:
     "Five production systems I've architected, shipped, and operated. Spanning ecommerce, internal tooling, backend optimization, AI workflow infrastructure, and real-time platforms.",
 };
@@ -143,7 +143,7 @@ export default function CaseStudiesIndex() {
                 textTransform: "uppercase", color: "var(--fg-4)",
               }}
             >
-              hello@bilalashraf.dev
+              bilalasharf@gmail.com
             </span>
           </div>
         </div>

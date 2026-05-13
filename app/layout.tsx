@@ -17,7 +17,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bilal Ashraf — Senior engineer · AI systems & infrastructure",
+  title: "Bilal Ashraf · AI Systems Engineer",
   description:
     "Senior full-stack engineer building AI-powered systems, automation, internal tooling, and the backend infrastructure underneath them.",
 };
