@@ -83,7 +83,7 @@ export default function Hero() {
           <a href="#work" className="btn primary">
             View case studies <span className="arr">→</span>
           </a>
-          <a href="#contact" className="btn">
+          <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn">
             Book a call
           </a>
         </motion.div>

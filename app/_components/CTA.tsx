@@ -63,7 +63,7 @@ export default function CTA() {
             }}/>
             Q3 2026 · taking 1–2 new engagements
           </span>
-          <a href="#" className="btn primary">Book a call <span className="arr">→</span></a>
+          <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn primary">Book a call <span className="arr">→</span></a>
           <span style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.02em", textTransform: "uppercase", color: "var(--fg-4)" }}>
             hello@bilalashraf.dev
           </span>

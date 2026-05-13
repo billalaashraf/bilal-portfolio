@@ -31,7 +31,7 @@ export default function Nav() {
           <a href="#contact" className="nav-link">Contact</a>
         </div>
 
-        <a href="#contact" className="btn sm">
+        <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn sm">
           Book a call <span className="arr">→</span>
         </a>
       </div>

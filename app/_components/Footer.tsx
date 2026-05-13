@@ -35,7 +35,7 @@ export default function Footer() {
             ]} />
             <FooterCol title="Contact" links={[
               { label: "hello@bilalashraf.dev", href: "mailto:hello@bilalashraf.dev" },
-              { label: "Book a call", href: "#" },
+              { label: "Book a call", href: "https://calendly.com/billalaashraf/1-1-with-bilal", external: true },
             ]} />
           </div>
         </div>
@@ -57,14 +57,19 @@ export default function Footer() {
   );
 }
 
-function FooterCol({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+function FooterCol({ title, links }: { title: string; links: { label: string; href: string; external?: boolean }[] }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
       <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--fg-4)", textTransform: "uppercase", marginBottom: 6 }}>
         {title}
       </span>
       {links.map((l) => (
-        <a key={l.label} href={l.href} className="footer-link">
+        <a
+          key={l.label}
+          href={l.href}
+          className="footer-link"
+          {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
           {l.label}
         </a>
       ))}
