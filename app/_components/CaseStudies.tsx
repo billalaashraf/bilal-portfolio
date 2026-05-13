@@ -70,7 +70,7 @@ export default function CaseStudies() {
             <span style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.02em", textTransform: "uppercase", color: "var(--fg-3)" }}>
               05 case studies
             </span>
-            <a href="#contact" className="btn ghost sm">All projects <span className="arr">→</span></a>
+            <a href="#work" className="btn ghost sm">All projects <span className="arr">→</span></a>
           </div>
         </div>
 

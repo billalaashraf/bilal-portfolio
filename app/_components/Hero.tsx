@@ -41,11 +41,6 @@ export default function Hero() {
       />
 
       <div className="wrap" style={{ position: "relative", zIndex: 1, maxWidth: 980 }}>
-        <motion.span className="eyebrow" {...item(0)}>
-          <span className="dot" />
-          Available for select engagements · 2026
-        </motion.span>
-
         <motion.h1
           {...item(0.06)}
           style={{

@@ -74,7 +74,7 @@ export default function Nav({ prefix = "" }: NavProps) {
             rel="noopener noreferrer"
             className="btn sm"
           >
-            Book a call <span className="arr">→</span>
+            Book a call
           </a>
         </div>
       </div>

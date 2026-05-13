@@ -50,20 +50,7 @@ export default function CTA() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 14, position: "relative" }}>
-          <span style={{
-            display: "inline-flex", alignItems: "center", gap: 10,
-            fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.1em",
-            color: "var(--fg-2)", textTransform: "uppercase",
-          }}>
-            <span style={{
-              width: 6, height: 6, borderRadius: "50%",
-              background: "var(--good)",
-              boxShadow: "0 0 0 4px rgba(126,217,159,0.12)",
-              flexShrink: 0,
-            }}/>
-            Q3 2026 · taking 1–2 new engagements
-          </span>
-          <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn primary">Book a call <span className="arr">→</span></a>
+          <a href="https://calendly.com/billalaashraf/1-1-with-bilal" target="_blank" rel="noopener noreferrer" className="btn primary">Book a call</a>
           <span style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.02em", textTransform: "uppercase", color: "var(--fg-4)" }}>
             bilalasharf@gmail.com
           </span>

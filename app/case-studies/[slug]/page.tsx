@@ -244,17 +244,13 @@ export default async function CaseStudyPage({
             <p className="subnote" style={{ marginTop: 18 }}>{cs.ctaNote}</p>
           </div>
           <div className="cta-r">
-            <span className="avail">
-              <span className="dot" />
-              Q3 2026 · taking 1–2 new engagements
-            </span>
             <a
               href="https://calendly.com/billalaashraf/1-1-with-bilal"
               target="_blank"
               rel="noopener noreferrer"
               className="btn primary"
             >
-              Book a call <span className="arr">→</span>
+              Book a call
             </a>
             <span style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: "0.02em", textTransform: "uppercase", color: "var(--fg-4)" }}>
               bilalasharf@gmail.com
